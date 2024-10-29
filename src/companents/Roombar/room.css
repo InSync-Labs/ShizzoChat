@@ -1,13 +1,9 @@
-.con.button{
-    background-color: #5e5e5e; /* Butonun arka plan rengi */
-    color: black;              /* Yazı rengi */
-    border: none;              /* Kenarlık olmadan */
-    padding: 20px 30px;        /* İç boşluklar */
-    font-size: 16px;           /* Yazı boyutu */
-    border-radius: 150px;        /* Kenarların yuvarlaklığı */
-    transition: background-color 0.3s; /* Hover efekti için geçiş süresi */
+body{
+    margin: 0;
+    overflow: hidden;
 }
-*{
-    padding: 5px;
+.allmember{
+height: auto;
+padding: 15px;
 }
 
