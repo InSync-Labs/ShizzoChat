@@ -1,0 +1,19 @@
+.main-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    flex-direction: column;
+}
+
+.list-group {
+    max-height: max-content;
+    overflow-y: auto; 
+    width: 100%;
+    max-width: 330px; 
+}
+
+.list-group-item {
+    width: 100%;
+}
