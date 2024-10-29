@@ -7,7 +7,7 @@ function App() {
     <Routes>
       <Route path='/navi' element={<Navi />} />
       <Route path='/room' element={<Room />} />
-      <Route path='/' element={"Hello World !asdasd!"} />
+      <Route path='/' element={"Hello World !abs!"} />
     </Routes>
   );
 
