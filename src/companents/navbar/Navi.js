@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Navbar,NavbarBrand,ListGroup,ListGroupItem,Card, CardBody,Button} from 'reactstrap';
+import {Navbar,NavbarBrand,ListGroup,ListGroupItem,Card, CardBody,Button, CardTitle, CardText} from 'reactstrap';
 import './Navbar.css';
 
 var rooms =[
@@ -23,8 +23,8 @@ function Navi() {
             {rooms.map(room=>(
                 <ListGroupItem key={room.id} className='list-group-item'>
                     <Card>
-                            <h5>{room.name}</h5>
-                            <p>Katılımcı Sayısı: {room.uyeler}</p>
+                            <CardTitle tag="h6">{room.name}</CardTitle>
+                            <CardText>Katılımcı Sayısı: {room.uyeler}</CardText>
                             <Button style={{margin:2}} size='sm'>Odaya Katıl</Button>
                     </Card>
                 </ListGroupItem>
