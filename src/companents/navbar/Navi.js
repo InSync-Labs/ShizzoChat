@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import {Navbar,NavbarBrand,ListGroup,ListGroupItem,Card, CardBody,Button, CardTitle, CardText} from 'reactstrap';
 import './Navbar.css';
 
-var rooms =[
-    {id:1, name:"Toplantı Odası", uyeler:5},
-    {id:1, name:"Toplantı Odası", uyeler:5},
-    {id:1, name:"Toplantı Odası", uyeler:5},
-    {id:1, name:"Toplantı Odası", uyeler:5},
-    {id:1, name:"Toplantı Odası", uyeler:5},
-    {id:1, name:"Toplantı Odası", uyeler:5},
-    {id:2, name:"Agent Odası", uyeler:10}
-
-];
-
 function Navi() {
+  const [rooms, setRooms] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/api/rooms")
+        .then(response => response.json())
+        .then(data => setRooms(data))
+        .catch(error => console.error("Hata:", error));
+}, []);
   return (
     <div className='main-div'>
       <Navbar className='navbar'>
@@ -21,10 +17,10 @@ function Navi() {
         </Navbar>
         <ListGroup>
             {rooms.map(room=>(
-                <ListGroupItem key={room.id} className='list-group-item'>
+                <ListGroupItem key={room.RoomID} className='list-group-item'>
                     <Card>
-                            <CardTitle tag="h6">{room.name}</CardTitle>
-                            <CardText>Katılımcı Sayısı: {room.uyeler}</CardText>
+                            <CardTitle tag="h6">{room.RoomName}</CardTitle>
+                            <CardText>Katılımcı Sayısı: {room.MemberCount}</CardText>
                             <Button style={{margin:2}} size='sm'>Odaya Katıl</Button>
                     </Card>
                 </ListGroupItem>
